@@ -1,0 +1,77 @@
+@import url('https://fonts.cdnfonts.com/css/minecraftia');
+
+body {
+    background-color: rgb(48, 47, 47);
+    color: aliceblue;
+}
+
+h1,
+p,
+#tentatives,
+#button,
+button {
+    font-family: 'Minecraftia', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3vw;
+     margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p,
+#button {
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+button {
+    font-size: 3vw;
+}
+
+#lettres {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* pour que les lettres passent à la ligne sur petit écran */
+        margin-bottom: 20px;
+}
+
+#tentatives {
+    font-size: 15px;
+}
+
+#svg-pendu {
+    margin: 20px auto;
+    display: block;
+    width: 80vw;  /* taille relative */
+    max-width: 300px; /* limite max pour grands écrans */
+    height: auto; /* conserver ratio */
+}
+
+button.lettre-bouton, #button button {
+    cursor: pointer;
+}
+
+/* Media query pour petits écrans */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 6vw;
+    }
+
+    p, #button {
+        font-size: 4vw;
+    }
+
+    button {
+        margin: 3px;
+        font-size: 3vw;
+      text-align: center; */
+        flex-wrap: wrap;
+       height: 45px;
+    }
+
+    #svg-pendu {
+        width: 90vw;
+    }
+}

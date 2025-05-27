@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de devinette</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/TPscript.js" defer></script>
+</head>
+<body>
+    <h1>Jeu de Devinette</h1>
+    <p id="devine_mot"></p>
+    <div id="pendu">
+    <svg id="svg-pendu" width="200" height="250" viewBox="0 0 200 250">
+        <!-- Support -->
+        <line x1="20" y1="230" x2="180" y2="230" stroke="white" stroke-width="4" />
+        <line x1="50" y1="230" x2="50" y2="20" stroke="white" stroke-width="4" />
+        <line x1="50" y1="20" x2="140" y2="20" stroke="white" stroke-width="4" />
+        <line x1="140" y1="20" x2="140" y2="50" stroke="white" stroke-width="4" />
+        
+        <!-- Corps du pendu : masqué au début -->
+        <circle id="tête" cx="140" cy="70" r="20" stroke="white" stroke-width="4" fill="none" visibility="hidden"/>
+        <line id="corps" x1="140" y1="90" x2="140" y2="150" stroke="white" stroke-width="4" visibility="hidden"/>
+        <line id="bras-gauche" x1="140" y1="110" x2="120" y2="130" stroke="white" stroke-width="4" visibility="hidden"/>
+        <line id="bras-droit" x1="140" y1="110" x2="160" y2="130" stroke="white" stroke-width="4" visibility="hidden"/>
+        <line id="jambe-gauche" x1="140" y1="150" x2="120" y2="180" stroke="white" stroke-width="4" visibility="hidden"/>
+        <line id="jambe-droit" x1="140" y1="150" x2="160" y2="180" stroke="white" stroke-width="4" visibility="hidden"/>
+    </svg>
+</div>
+
+    <div id="lettres"></div>
+    <div id="button"></div>
+</body>
+</html>
