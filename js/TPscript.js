@@ -14,10 +14,10 @@ const buttonDiv = document.getElementById("button");
 
 let mot_a_rechercher = '';
 let mot_utilisateur = [];
-let nbr_tentatives = 5;
+let nbr_tentatives = 6;
 
 function init() {
-    nbr_tentatives = 5;
+    nbr_tentatives = 6;
     mot_a_rechercher = '';
     mot_utilisateur = [];
 
@@ -113,10 +113,10 @@ function creer_bouton_rejouer() {
     buttonDiv.appendChild(btnRejouer);
 }
 
-// 🎨 Fonction SVG du pendu
+// Fonction SVG du pendu
 function afficher_pendu_erreur(erreurs) {
     const parties = [
-        "tête",
+        "tete",
         "corps",
         "bras-gauche",
         "bras-droit",
@@ -124,13 +124,19 @@ function afficher_pendu_erreur(erreurs) {
         "jambe-droit"
     ];
 
-    for (let i = 0; i < parties.length; i++) {
-        const element = document.getElementById(parties[i]);
-        if (element) {
-            element.style.visibility = i < erreurs ? "visible" : "hidden";
-        }
+    // On cache tout
+    for (let partie of parties) {
+        const el = document.getElementById(partie);
+        if (el) el.style.visibility = "hidden";
+    }
+
+    // Puis on affiche uniquement ce qu'il faut
+    for (let i = 0; i < erreurs; i++) {
+        const el = document.getElementById(parties[i]);
+        if (el) el.style.visibility = "visible";
     }
 }
+
 
 // Lancement du jeu
 init();
