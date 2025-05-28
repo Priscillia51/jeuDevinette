@@ -3,12 +3,23 @@
 body {
     background-color: rgb(48, 47, 47);
     color: aliceblue;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h1,
 p,
 #tentatives,
-#button,
+#bouton-rejouer,
 button {
     font-family: 'Minecraftia', sans-serif;
     text-align: center;
@@ -16,25 +27,26 @@ button {
 
 h1 {
     font-size: 3vw;
-     margin-top: 20px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
 p,
-#button {
+#bouton-rejouer {
     font-size: 1.5vw;
     text-align: center;
 }
 
 button {
     font-size: 3vw;
+    cursor: pointer;
 }
 
 #lettres {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* pour que les lettres passent à la ligne sur petit écran */
-        margin-bottom: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 #tentatives {
@@ -42,36 +54,68 @@ button {
 }
 
 #svg-pendu {
-    margin: 20px auto;
     display: block;
-    width: 80vw;  /* taille relative */
-    max-width: 300px; /* limite max pour grands écrans */
-    height: auto; /* conserver ratio */
+    margin: 20px auto;
+    width: 60vw;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    /* Ajoute ceci */
 }
 
-button.lettre-bouton, #button button {
-    cursor: pointer;
+#bouton-rejouer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 60px;
 }
 
-/* Media query pour petits écrans */
 @media (max-width: 400px) {
     h1 {
         font-size: 6vw;
     }
 
-    p, #button {
+    p,
+    #bouton-rejouer {
         font-size: 4vw;
     }
 
     button {
         margin: 3px;
-        font-size: 3vw;
-      text-align: center; */
-        flex-wrap: wrap;
-       height: 45px;
+        font-size: 4vw;
+        height: 45px;
     }
 
     #svg-pendu {
-        width: 90vw;
+        width: 50vw;
+        aspect-ratio: 4 / 5;
     }
+
+    #bouton-rejouer {
+        padding-bottom: calc(env(safe-area-inset-bottom, 20px) + 20px);
+    }
+
+.lettre-bouton {
+    background-color: #59a0e7 !important;
+    min-width: 40px;
+    min-height: 45px;
+    padding: 0;
+    margin: 3px;
+    font-size: 4vw;
+    font-family: 'Minecraftia', sans-serif;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.lettre-bouton:disabled {
+    background-color: #4d4f51 !important;
+    color: #777 !important;
+    opacity: 1;
+    cursor: default;
+}
+
 }
