@@ -40,6 +40,9 @@ p,
 button {
     font-size: 3vw;
     cursor: pointer;
+    border-radius: 10px;
+    background-color: #031930 !important;
+    color: aliceblue;
 }
 
 #lettres {
@@ -68,6 +71,14 @@ button {
     justify-content: center;
     margin-top: 20px;
     padding-bottom: 60px;
+    }
+
+.lettre-bouton {
+background-color: #59a0e7 !important;
+color: #031930;
+margin: 1px;
+border-radius: 10px;
+width: 40px;
 }
 
 @media (max-width: 400px) {
@@ -96,7 +107,6 @@ button {
     }
 
 .lettre-bouton {
-    background-color: #59a0e7 !important;
     min-width: 40px;
     min-height: 45px;
     padding: 0;
